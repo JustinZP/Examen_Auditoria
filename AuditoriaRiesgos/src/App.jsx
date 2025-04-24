@@ -101,8 +101,8 @@ const App = () => {
   const handleOk = () => {
     setIsLoading(true);  // Activar el estado de carga al inicio
 
-    axios.post('/analizar-riesgos', { activo: newData.activo })
-      .then(response => {
+    axios.post('http://localhost:5500/analizar-riesgos', { activo: newData.activo })
+    .then(response => {
         const { activo, riesgos, impactos } = response.data;
         addNewRows(activo, riesgos, impactos);
         setIsModalVisible(false); // Cerrar el modal
